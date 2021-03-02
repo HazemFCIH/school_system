@@ -18,8 +18,7 @@ class CreateStudents extends Migration
             $table->char('name', 100);
             $table->char('email', 100);
             $table->unsignedBigInteger('rooms_id');
-            $table->dateTime('created_at');
-        });
+            $table->timestamps();        });
     }
 
     /**

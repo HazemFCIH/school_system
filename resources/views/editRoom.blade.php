@@ -1,0 +1,32 @@
+@extends('layouts.dashboard')
+
+@section('Navi')
+
+
+<div class="row">
+    
+    <div class="col-md-6">
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif  
+<form action="{{ route('rooms.update',$room->id) }}" method="POST">
+    @csrf
+    @method('PUT')
+    <div class="form-group">
+      <label>Room name</label>
+      <input type="text" class="form-control" name="name" placeholder="Enter name" value="{{$room->name}}">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</div>
+
+@endsection
+  

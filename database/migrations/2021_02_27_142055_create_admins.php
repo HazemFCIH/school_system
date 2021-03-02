@@ -18,8 +18,7 @@ class CreateAdmins extends Migration
             $table->char('name', 100);
             $table->char('email', 100);
             $table->char('password', 200);
-            $table->dateTime('created_at');
-        });
+            $table->timestamps();        });
     }
 
     /**
