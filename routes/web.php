@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\RoomController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,14 +24,13 @@ use Illuminate\Support\Facades\Route;
      return view('welcome'); });
      Route::get('/dashboard', function () {
         return view('Maindash'); })->name('dashboard');
-    Route::get('/students', function () {
-            return view('students');
+
+ Route::resource('students', StudentController::class);
+ Route::resource('rooms', RoomController::class);
+
+
+    Route::get('/students', StudentController::class.'@index')->name('students');
+
+        Route::get('/rooms', RoomController::class.'@index')->name('rooms');
         
-        
-        })->name('students');
-        Route::get('/rooms', function () {
-            return view('rooms');
-        
-        
-        })->name('rooms');
        
