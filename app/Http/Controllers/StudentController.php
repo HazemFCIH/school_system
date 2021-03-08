@@ -18,7 +18,7 @@ class StudentController extends Controller
     {
         $data = Student::all();
     
-        return view('students',compact('data'))
+        return view('Student.students',compact('data'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
         
     }
@@ -31,7 +31,7 @@ class StudentController extends Controller
     public function create()
     {
       $rooms = Room::all();
-        return view('createStudent',compact('rooms'));
+        return view('Student.createStudent',compact('rooms'));
     }
 
     /**
@@ -72,7 +72,7 @@ class StudentController extends Controller
     public function edit(Student $student)
     {
         $rooms = Room::all();
-        return view('editStudent',compact('student','rooms'));
+        return view('Student.editStudent',compact('student','rooms'));
     }
 
     /**
