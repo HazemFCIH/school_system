@@ -16,7 +16,7 @@ class RoomController extends Controller
     {
         $data = Room::latest()->paginate(5);
     
-        return view('rooms',compact('data'))
+        return view('Room.rooms',compact('data'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
         
     }
@@ -28,7 +28,7 @@ class RoomController extends Controller
      */
     public function create()
     {
-       return view('createRoom');
+       return view('Room.createRoom');
     }
 
     /**
@@ -66,7 +66,7 @@ class RoomController extends Controller
      */
     public function edit(Room $room)
     {
-        return view('editRoom',compact('room'));
+        return view('Room.editRoom',compact('room'));
     }
 
     /**
