@@ -62,9 +62,9 @@ The above copyright notice and this permission notice shall be included in all c
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
+            <a class="nav-link" href="{{route('teachers')}}">
               <i class="material-icons">library_books</i>
-              <p>Typography</p>
+              <p>Teachers</p>
             </a>
           </li>
           <li class="nav-item ">

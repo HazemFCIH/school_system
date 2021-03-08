@@ -13,13 +13,15 @@ class Room extends Model
         'name',
     ];
 
-  /**
-   * Get all of the students for the Room
-   *
-   * @return \Illuminate\Database\Eloquent\Relations\HasMany
-   */
-  public function students(): HasMany
+ 
+  public function students()
   {
       return $this->hasMany(Student::class, 'rooms_id');
   }
+
+public function teachers()
+{
+    return $this->belongsToMany(Teacher::class,'rooms_teachers', 'rooms_id', 'teachers_id');
+}
+
 }

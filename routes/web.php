@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\TeacherController;
 
 
 
@@ -27,10 +28,14 @@ use App\Http\Controllers\RoomController;
 
  Route::resource('students', StudentController::class);
  Route::resource('rooms', RoomController::class);
+ Route::resource('teachers', TeacherController::class);
+
 
 
     Route::get('/students', StudentController::class.'@index')->name('students');
 
-        Route::get('/rooms', RoomController::class.'@index')->name('rooms');
-        
+    Route::get('/rooms', RoomController::class.'@index')->name('rooms');
+    
+    Route::get('/teachers', TeacherController::class.'@index')->name('teachers');
+
        

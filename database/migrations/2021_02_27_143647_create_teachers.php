@@ -17,7 +17,8 @@ class CreateTeachers extends Migration
             $table->increments('id');
             $table->char('name', 100);
             $table->char('subjects', 100);
-            $table->timestamps();        });
+            $table->timestamps();      
+          });
     }
 
     /**
