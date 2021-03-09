@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Teacher;
 use Illuminate\Http\Request;
+use App\Models\Room;
 
 class TeacherController extends Controller
 {
@@ -14,8 +15,11 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $data = Teacher::all();
+    
+        return view('Teacher.teachers',compact('data'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+            }
 
     /**
      * Show the form for creating a new resource.
@@ -24,7 +28,8 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        //
+        $rooms = Room::all();
+        return view('Teacher.createTeacher',compact('rooms'));
     }
 
     /**
@@ -35,8 +40,18 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'name' => 'required',
+            'subjects' => 'required',
+            'rooms_id' => 'required',
+
+            
+        ]);
+       $teacher = Teacher::create(['name'=>$request->name,'subjects'=>$request->subjects]);
+
+        $room = Room::findOrFail($request->rooms_id);
+        $teacher->rooms()->attach($request->rooms_id);
+       return redirect()->route('teachers')->with('success','teachers created successfully.');        }
 
     /**
      * Display the specified resource.
@@ -57,8 +72,8 @@ class TeacherController extends Controller
      */
     public function edit(Teacher $teacher)
     {
-        //
-    }
+        $rooms = Room::all();
+        return view('Teacher.editTeacher',compact('teacher','rooms'));    }
 
     /**
      * Update the specified resource in storage.
@@ -69,7 +84,18 @@ class TeacherController extends Controller
      */
     public function update(Request $request, Teacher $teacher)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'subjects' => 'required',
+            'rooms_id' => 'required',
+
+            
+        ]);
+       $teacher->update(['name'=>$request->name,'subjects'=>$request->subjects]);
+
+        $room = Room::findOrFail($request->rooms_id);
+        $teacher->rooms()->sync($request->rooms_id);
+       return redirect()->route('teachers')->with('success','teachers created successfully.');  
     }
 
     /**
@@ -80,6 +106,7 @@ class TeacherController extends Controller
      */
     public function destroy(Teacher $teacher)
     {
-        //
-    }
+        $teacher->delete();
+        $teacher->rooms()->detach();
+        return redirect()->route('teachers')->with('success','teachers deleted successfully.');    }
 }
