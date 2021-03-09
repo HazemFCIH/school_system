@@ -37,11 +37,11 @@
             <td class="text-center">{{++$i}}</td>
             <td>{{$row->name}}</td>
             <td>{{$row->subjects}}</td>
-            @foreach ($row->rooms as $room)
+            <td><ul> @foreach ($row->rooms as $room)
                 
             
-            <td>{{$room->name}}</td>
-            @endforeach
+            <li>{{$room->name}}</li>
+            @endforeach </ul></td>
             <td class=" text-right">
                 <form action="{{ route('teachers.destroy',$row->id) }}" method="POST">   
 

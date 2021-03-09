@@ -27,7 +27,7 @@
         <input type="text" class="form-control" name="subjects" placeholder="Enter Subject">
     </div>
       <div class="form-group">
-        <select class="form-control selectpicker" data-style="btn btn-link" name="rooms_id" id="rooms_id">
+        <select multiple class="form-control " data-style="btn btn-link" name="rooms_id[]" id="rooms_id">
            
             <option>select values</option>
             @foreach ($rooms as $room)

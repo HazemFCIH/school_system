@@ -28,7 +28,7 @@
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email"  value="{{$student->email}}">
       </div>
       <div class="form-group">
-        <select class="form-control selectpicker" data-style="btn btn-link" name="rooms_id" id="exampleFormControlSelect1">
+        <select class="form-control" name="rooms_id" >
            
             <option value="{{$student->rooms->id}}">{{$student->rooms->name}}</option>
             @foreach ($rooms as $room)

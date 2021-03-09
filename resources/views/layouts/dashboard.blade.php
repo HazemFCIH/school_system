@@ -174,7 +174,6 @@ The above copyright notice and this permission notice shall be included in all c
           
         </div>
       </div>
-      @yield('footer')
     <!--   Core JS Files   -->
 <script src="{{asset('js/core/jquery.min.js')}}"></script>
 <script src="{{asset('js/core/popper.min.js')}}"></script>
@@ -189,7 +188,6 @@ The above copyright notice and this permission notice shall be included in all c
 <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
 <script src="{{asset('js/plugins/jquery.bootstrap-wizard.js')}}"></script>
 <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
-<script src="{{asset('js/plugins/bootstrap-selectpicker.js')}}"></script>
 <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
 <script src="{{asset('js/plugins/bootstrap-datetimepicker.min.js')}}"></script>
 <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
@@ -395,6 +393,11 @@ $(document).ready(function() {
   md.initDashboardPageCharts();
 
 });
+</script>
+<script src="{{asset('js/plugins/bootstrap-selectpicker.js')}}"></script>
+<script type="text/javascript">
+  $('.selectpicker').selectpicker({
+    });
 </script>
 </body>
 

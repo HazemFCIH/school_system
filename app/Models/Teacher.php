@@ -21,7 +21,7 @@ class Teacher extends Model
  */
 public function rooms()
 {
-    return $this->belongsToMany(Room::class, 'rooms_teachers', 'teachers_id', 'rooms_id');
+    return $this->belongsToMany(Room::class, 'rooms_teachers', 'teachers_id', 'rooms_id')->withTimestamps();
 }
 
 }

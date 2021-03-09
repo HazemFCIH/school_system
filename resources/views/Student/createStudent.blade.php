@@ -27,7 +27,8 @@
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email">
       </div>
       <div class="form-group">
-        <select class="form-control selectpicker" data-style="btn btn-link" name="rooms_id" id="rooms_id">
+
+        <select class="form-control"  name="rooms_id"  >
            
             <option>select values</option>
             @foreach ($rooms as $room)
@@ -38,6 +39,7 @@
 
           </select>
       </div>
+      <br>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
