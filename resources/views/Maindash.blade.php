@@ -1,10 +1,7 @@
 @extends('layouts.dashboard')
 @section('Navi')
-    
-<div class="row">
-              
-</div>
-      @endsection
-      @section('footer')
-      @include('layouts.footer')
+  <div id="app">
+<login-form></login-form>
+<register-form></register-form>
+  </div>
       @endsection

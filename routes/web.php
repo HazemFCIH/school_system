@@ -22,7 +22,7 @@ use App\Http\Controllers\TeacherController;
 //     return ;
 // });
  Route::get('/', function () {
-     return view('welcome'); });
+     return view('Maindash'); });
      Route::get('/dashboard', function () {
         return view('Maindash'); })->name('dashboard');
 
