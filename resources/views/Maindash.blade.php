@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 @section('Navi')
   <div id="app">
-
-    @yield('content')
+<login-form></login-form>
+<register-form></register-form>
   </div>
       @endsection
