@@ -10,6 +10,12 @@ user: {
  
  const actions = {
 
+getUser({commit}){
+axios.get("api/current")
+.then(response => {
+commit('setUser',response.data);
+});
+},
 loginUser({},user){
 axios
 .post("api/login",
@@ -52,9 +58,21 @@ registerUser({},user){
     })
     
 },
+logoutUser() {
+
+    localStorage.removeItem("admin_token");
+    window.location.replace("/");
+},
 
  };
- const mutations = {};
+ const mutations = {
+
+setUser(state,data){
+state.user = data;
+
+}
+
+ };
 
  export default {
 namespaced : true,     

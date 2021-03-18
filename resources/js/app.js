@@ -5,7 +5,7 @@ Vue.use(VueRouter);
 import Home from './components/Home.vue';
 import Login from './components/LoginForm.vue';
 import Register from './components/RegisterForm.vue';
-
+import Vuetify from '../plugins/vuetify'
 
 import App from './App.vue';
 import VueAxios from 'vue-axios';
@@ -38,6 +38,8 @@ component:Register
 
 Vue.component('login-form',require('./components/LoginForm.vue').default)
 Vue.component('register-form',require('./components/RegisterForm.vue').default)
+Vue.component('app-container',require('./components/appContainer.vue').default)
+
 
 const router = new VueRouter({mode : 'history',routes : routes});
-const app = new Vue(Vue.util.extend({router,store})).$mount('#app');
+const app = new Vue(Vue.util.extend({router,store,Vuetify})).$mount('#app');
