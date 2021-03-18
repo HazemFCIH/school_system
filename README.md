@@ -3,7 +3,6 @@
 <br>
 Laravel
 <br>
-<br>
 Vue.js
 <br>
 Passport package
