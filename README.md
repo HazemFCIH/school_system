@@ -1,15 +1,16 @@
 <h1>Scool System App</h1>
 <h2>Tools</h2>
 <br>
-with
+Laravel
+<br>
+<br>
+Vue.js
 <br>
 Passport package
 <br>
 Restful API
 <br>
-Vue.js
-<br>
-contained on Docker
+Docker
 <br>
 <hr>
 <h3>Featuers</h3>
