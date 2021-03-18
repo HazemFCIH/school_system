@@ -1,5 +1,7 @@
-@extends('layouts.dashboard')
-
+@extends('layouts.header')
+@section('sidebar')
+@include('layouts.sidebar')
+@endsection
 @section('Navi')
 
 

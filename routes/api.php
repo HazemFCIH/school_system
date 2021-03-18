@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PassportAuthController;
 use App\Http\Controllers\RoomApiController;
+use App\Http\Controllers\AdminController;
+
 
 
 
@@ -24,3 +26,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('register', [PassportAuthController::class, 'register']);
 Route::post('login', [PassportAuthController::class, 'login']);
 Route::apiResource('rooms', RoomApiController::class)->middleware('auth:api');
+Route::middleware('auth:api')->get('/current',AdminController::class.'@currentUser');
