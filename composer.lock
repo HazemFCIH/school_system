@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0146583fdca1123faf36aebeeaebfe73",
+    "content-hash": "39716c0f4705790fa7ed14cb9b0e9866",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6283,16 +6283,16 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.4.3",
+            "version": "v1.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "0200ce6e0f697699bce036c42d91f1daab8039a8"
+                "reference": "66b26181c3e86266b0b98f45a3398b090f37dee9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/0200ce6e0f697699bce036c42d91f1daab8039a8",
-                "reference": "0200ce6e0f697699bce036c42d91f1daab8039a8",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/66b26181c3e86266b0b98f45a3398b090f37dee9",
+                "reference": "66b26181c3e86266b0b98f45a3398b090f37dee9",
                 "shasum": ""
             },
             "require": {
@@ -6339,7 +6339,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2021-02-24T21:20:16+00:00"
+            "time": "2021-03-16T16:28:57+00:00"
         },
         {
             "name": "mockery/mockery",
