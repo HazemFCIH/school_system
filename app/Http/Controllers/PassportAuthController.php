@@ -22,7 +22,7 @@ class PassportAuthController extends Controller
             'password' => bcrypt($request->password)
         ]);
        
-        $token = $Admin->createToken('Haz')->accessToken;
+        $token = $Admin->createToken('school_system Password Grant Client')->accessToken;
  
         return response()->json(['token' => $token], 200);
     }
@@ -38,7 +38,7 @@ class PassportAuthController extends Controller
         ];
  
         if (auth()->attempt($data)) {
-            $token = auth()->user()->createToken('Haz')->accessToken;
+            $token = auth()->user()->createToken('school_system Password Grant Client')->accessToken;
             return response()->json(['token' => $token], 200);
         } else {
             return response()->json(['error' => 'Unauthorised'], 401);
