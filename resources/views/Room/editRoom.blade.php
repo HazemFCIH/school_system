@@ -1,9 +1,6 @@
-@extends('layouts.header')
-@section('sidebar')
-@include('layouts.sidebar')
-@endsection
-@section('Navi')
+@extends('layouts.dashboard')
 
+@section('Navi')
 
 <div class="row">
     
